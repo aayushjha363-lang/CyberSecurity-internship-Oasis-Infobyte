@@ -1,27 +1,27 @@
-Basic Firewall Setup Using UFW
+Basic Firewall Configuration with UFW
 Objective
 
-The purpose of this project was to implement a fundamental network security layer on a Linux system using the Uncomplicated Firewall (UFW).
+The aim of this project was to establish a simple security barrier on a Linux system using the Uncomplicated Firewall (UFW).
 
 Configuration Steps
 
-Installation: Installed UFW through the system's package manager (apt).
+Installation: UFW was installed through the Linux package management tool (apt).
 
-Default Policy: Configured the default policy for incoming connections to deny, establishing a “secure by default” stance.
+Policy Setup: Incoming connections were blocked by default by setting the policy to deny for better security.
 
-Rule Configuration:
+Rule Application:
 
-Permitted SSH (Port 22) to allow remote administrative access.
+Enabled SSH (Port 22) to allow remote system management.
 
-Blocked HTTP (Port 80) to prevent unauthorized web requests.
+Disabled HTTP (Port 80) to stop unauthorized web traffic.
 
-Enabling Firewall: Activated the UFW service and ensured it starts automatically on system boot.
+Activation: The firewall was turned on and set to remain enabled after every system restart.
 
 Verification
 
-Used the command sudo ufw status verbose to check:
+The sudo ufw status verbose command was used to confirm:
 
-Firewall State: Active
+Firewall Status: Active
 
 Port 22: ALLOW IN
 
