@@ -1,95 +1,175 @@
 
 ---
 
-# Research Report: Study of Major Network Security Threats
+# Comprehensive Research Report on Major Network Security Threats
 
 ## 1. Introduction
 
-With the rapid growth of digital connectivity, organizations are becoming increasingly dependent on computer networks to carry out daily operations. As a result, threats to network security have grown more advanced and widespread. Network security focuses on safeguarding networks from unauthorized access, misuse, disruption, or modification of data. This report examines three significant network security threats—**Denial-of-Service (DoS)**, **Man-in-the-Middle (MITM)**, and **Spoofing**—by explaining how they work, the damage they can cause, and the methods used to prevent them.
+Network security involves safeguarding computer networks and digital data from unauthorized access, misuse, alteration, or disruption. As businesses and institutions increasingly depend on online systems and cloud infrastructure, cyber threats targeting networks have grown in frequency and complexity. Cybercriminals take advantage of weaknesses in protocols, system configurations, and user practices to breach networks.
+
+This report presents an in-depth analysis of common network security threats, specifically:
+
+* Denial of Service (DoS) attacks
+* Man-in-the-Middle (MITM) attacks
+* Spoofing attacks
+
+Each threat is examined based on how it operates, its consequences, real-life incidents, and preventive strategies.
 
 ---
 
-## 2. Denial-of-Service (DoS) and Distributed Denial-of-Service (DDoS)
+## 2. Categories of Network Security Threats
 
-### 2.1 Working Principle
+Network threats can generally be grouped into three main categories:
 
-A Denial-of-Service attack is designed to interrupt normal network operations by overwhelming a server or system with excessive requests. This overload prevents legitimate users from accessing the service. In a **Distributed Denial-of-Service (DDoS)** attack, the traffic originates from numerous compromised devices controlled by an attacker, making detection and mitigation more difficult.
-
-### 2.2 Effects
-
-* **Service Interruption:** Websites and applications may become slow or completely inaccessible.
-* **Economic Impact:** Organizations may suffer revenue loss and incur recovery costs.
-* **Loss of Credibility:** Customers may lose confidence in the reliability of affected services.
-
-### 2.3 Prevention Techniques
-
-* **Traffic Rate Control:** Limiting the number of requests allowed from a single source.
-* **Anycast Routing:** Distributing incoming traffic across multiple servers worldwide to reduce attack intensity.
-* **Web Application Firewalls:** Detecting and blocking abnormal or malicious traffic.
-
-> **Practical Example:** In 2020, Amazon Web Services successfully defended against a large-scale DDoS attack that reached **2.3 terabits per second**, using CLDAP reflection techniques.
+1. **Availability Attacks** – Aim to disrupt or shut down services (e.g., DoS attacks).
+2. **Confidentiality Attacks** – Focus on stealing private or sensitive information (e.g., MITM attacks).
+3. **Authentication Attacks** – Attempt to impersonate legitimate users or systems (e.g., Spoofing attacks).
 
 ---
 
-## 3. Man-in-the-Middle (MITM) Attacks
+## 3. Denial of Service (DoS) and Distributed DoS (DDoS) Attacks
 
-### 3.1 Working Principle
+### 3.1 Meaning
 
-In a Man-in-the-Middle attack, an attacker positions themselves between two communicating parties without their knowledge. The attacker can monitor, intercept, or alter the exchanged data while both parties believe the communication is secure.
+A Denial of Service (DoS) attack is a malicious attempt to make a network, server, or application inaccessible to legitimate users by overwhelming it with excessive traffic. When multiple compromised systems are used simultaneously to perform the attack, it is known as a Distributed Denial of Service (DDoS) attack.
 
-### 3.2 Effects
+### 3.2 How It Works
 
-* **Information Leakage:** Sensitive data such as passwords and financial details may be stolen.
-* **Unauthorized Access:** Attackers can hijack active sessions and perform illegal actions.
-* **Data Alteration:** Messages or transactions can be modified during transmission.
+* The attacker sends a massive number of requests to the target system.
+* These requests consume processing power, memory, or bandwidth.
+* Legitimate users are unable to access the service.
+* The system slows down or crashes completely.
 
-### 3.3 Prevention Techniques
+### 3.3 Common Forms
 
-* **Encrypted Communication:** Using TLS/SSL to protect data confidentiality.
-* **Digital Certificates:** Verifying identities through Public Key Infrastructure (PKI).
-* **Virtual Private Networks (VPNs):** Securing data transmission through encrypted tunnels.
+* **Traffic Flooding Attacks** (TCP SYN flood, UDP flood)
+* **Application-Level Attacks** (HTTP flood)
+* **Protocol Exploitation Attacks** (Ping of Death)
 
-> **Practical Example:** An **Evil Twin attack** occurs when attackers create a fake Wi-Fi network in public locations, tricking users into connecting and exposing their data.
+### 3.4 Consequences
 
----
+* Temporary or prolonged service outages
+* Revenue loss
+* Damage to reputation
+* Increased operational and recovery expenses
 
-## 4. Spoofing Attacks
+### 3.5 Example Case
 
-### 4.1 Working Principle
+In 2016, the Mirai botnet exploited vulnerable IoT devices to launch a large-scale DDoS attack, affecting major platforms such as Amazon, Netflix, and GitHub.
 
-Spoofing involves impersonating a legitimate entity by manipulating identifying information. Common forms include:
+### 3.6 Prevention Methods
 
-* **IP Spoofing:** Altering the source IP address to appear trustworthy.
-* **Email Spoofing:** Faking sender details to deceive recipients.
-* **DNS Spoofing:** Redirecting users to malicious websites by corrupting DNS records.
-
-### 4.2 Effects
-
-* **Security Bypass:** Firewalls and filters may be deceived by forged identities.
-* **Malicious Software Spread:** Users may unknowingly download harmful programs.
-* **Effective Phishing Attacks:** Increased success of scams due to perceived authenticity.
-
-### 4.3 Prevention Techniques
-
-* **Packet Filtering:** Verifying source and destination IP addresses.
-* **Email Authentication Standards:** Implementing SPF, DKIM, and DMARC protocols.
-* **DNS Security Extensions (DNSSEC):** Ensuring DNS data authenticity through digital signatures.
+* Deploy firewalls and intrusion prevention systems
+* Apply traffic filtering and rate-limiting techniques
+* Use load balancers
+* Implement cloud-based DDoS mitigation solutions
+* Continuously monitor network traffic
 
 ---
 
-## 5. Comparison Summary
+## 4. Man-in-the-Middle (MITM) Attacks
 
-| Threat Type  | Objective        | Primary Protection             |
-| ------------ | ---------------- | ------------------------------ |
-| **DoS/DDoS** | Disrupt Services | Traffic Management & Filtering |
-| **MITM**     | Intercept Data   | Encryption & Secure Channels   |
-| **Spoofing** | Impersonation    | Authentication & Verification  |
+### 4.1 Meaning
+
+A Man-in-the-Middle (MITM) attack occurs when an unauthorized party intercepts and possibly alters communication between two users without their awareness.
+
+### 4.2 Working Process
+
+* The attacker inserts themselves between two communicating parties.
+* Data exchanged between them is intercepted.
+* Sensitive information such as login credentials or financial details may be stolen.
+* The attacker may modify the data before forwarding it.
+
+### 4.3 Common Techniques
+
+* ARP poisoning
+* DNS manipulation
+* SSL stripping
+* Fake or rogue Wi-Fi hotspots
+
+### 4.4 Effects
+
+* Exposure of confidential data
+* Financial fraud
+* Identity theft
+* Compromised data integrity
+
+### 4.5 Real-Life Scenario
+
+Cybercriminals frequently exploit unsecured public Wi-Fi networks in airports, cafes, and hotels to intercept user data through MITM attacks.
+
+### 4.6 Prevention Strategies
+
+* Use secure protocols such as HTTPS and SSL/TLS
+* Avoid connecting to unsecured public Wi-Fi networks
+* Use Virtual Private Networks (VPNs)
+* Enable multi-factor authentication (MFA)
+* Keep software and systems updated
 
 ---
 
-## 6. Conclusion
+## 5. Spoofing Attacks
 
-Network security threats continue to grow as technology advances. Although DoS, MITM, and Spoofing attacks differ in execution, they can all be minimized through a layered security approach. Implementing strong encryption, reliable authentication mechanisms, and continuous network monitoring helps organizations strengthen their defenses and protect critical digital assets.
+### 5.1 Meaning
+
+Spoofing involves pretending to be a legitimate entity to deceive users or systems and gain unauthorized access.
+
+### 5.2 Types of Spoofing
+
+* **IP Spoofing** – Forging a fake IP address
+* **Email Spoofing** – Sending emails with falsified sender information
+* **ARP Spoofing** – Redirecting local network traffic
+* **DNS Spoofing** – Redirecting users to malicious websites
+
+### 5.3 How It Functions
+
+Attackers alter identification details in data packets or communication headers, making malicious traffic appear trustworthy.
+
+### 5.4 Consequences
+
+* Unauthorized access to systems
+* Interception of data
+* Spread of malware
+* Phishing scams and financial fraud
+
+### 5.5 Example
+
+Email spoofing is widely used in phishing attacks, where attackers pose as banks or government institutions to steal confidential information.
+
+### 5.6 Prevention Techniques
+
+* Implement email verification mechanisms such as SPF, DKIM, and DMARC
+* Enable secure ARP inspection
+* Use DNSSEC for domain protection
+* Apply strict access control measures
+* Monitor unusual network activities
+
+---
+
+## 6. Comparison of Threats
+
+| Threat   | Main Objective               | Risk Level | Defense Measures                 |
+| -------- | ---------------------------- | ---------- | -------------------------------- |
+| DoS/DDoS | Disrupt service availability | High       | Firewalls, DDoS mitigation tools |
+| MITM     | Steal confidential data      | Very High  | Encryption, VPN, MFA             |
+| Spoofing | Impersonate trusted sources  | High       | Identity authentication systems  |
+
+---
+
+## 7. Recommended Network Security Practices
+
+* Conduct regular security assessments
+* Provide cybersecurity awareness training
+* Implement strong authentication policies
+* Use network segmentation
+* Deploy intrusion detection systems
+* Maintain regular backups and apply software patches
+
+---
+
+## 8. Conclusion
+
+Network security threats continue to evolve alongside technological advancements. DoS attacks primarily target service availability, MITM attacks compromise private communication, and spoofing attacks exploit trust relationships within networks. To effectively defend against these threats, organizations must adopt a multi-layered security strategy that combines technical safeguards, monitoring systems, and user education.
 
 ---
 
