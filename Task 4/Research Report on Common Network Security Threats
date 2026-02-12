@@ -1,1 +1,52 @@
 
+---
+
+# 🔐 Network Security Threats – Research Report
+
+## 📘 Project Description
+
+This repository includes a detailed study of **major network security threats** that affect computer networks today.
+
+The report explains how different cyberattacks are carried out, the damage they can cause, and the security measures used to protect networks from such threats.
+
+The main purpose of this project is to improve understanding of network security concepts as part of academic coursework and practical learning.
+
+---
+
+## 🎯 Project Goals
+
+The goals of this research project are:
+
+* To examine various common network security threats
+* To understand the working process of these attacks
+* To study their impact on systems and organizations
+* To review real-world examples of cyberattacks
+* To identify effective prevention and protection techniques
+
+---
+
+## 🔎 Security Threats Discussed
+
+This report covers the following key network threats:
+
+### 1️⃣ Denial of Service (DoS & DDoS) Attacks
+
+These attacks overload a server or network with excessive traffic, making it unavailable for legitimate users.
+
+### 2️⃣ Man-in-the-Middle (MITM) Attacks
+
+These attacks occur when an attacker secretly intercepts communication between two parties.
+
+### 3️⃣ Spoofing Attacks
+
+These involve pretending to be a trusted source to gain unauthorized access.
+
+Types included:
+
+* **IP Spoofing**
+* **Email Spoofing**
+* **ARP Spoofing**
+* **DNS Spoofing**
+
+---
+
